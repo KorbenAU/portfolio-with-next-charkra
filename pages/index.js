@@ -17,7 +17,7 @@ export default function Home() {
                      align={"center"}
                      mb={"2em"}
                 >
-                    Hello, gasdfasdgasdfasdgds
+                    {"Hello, I'm a full-stack developer based in Melbourne!"}
                 </Box>
                 <Box display={{md: "flex"}}>
                     <Box flexGrow={1}>

@@ -2,6 +2,15 @@ import React from "react";
 import styled from "@emotion/styled";
 import Image from "next/image";
 import Link from "next/link";
+import {
+    Button,
+    Popover,
+    PopoverArrow,
+    PopoverBody,
+    PopoverCloseButton,
+    PopoverContent,
+    PopoverHeader, PopoverTrigger
+} from "@chakra-ui/react";
 
 const LogoBox = styled.span`
    font-weight: bold;
@@ -17,14 +26,35 @@ const LogoBox = styled.span`
    }
 `;
 
-const SocialButton = ({href, logo, alt}) => {
+const SocialButton = ({href, logo, alt, popOver, popOverHead, popOverText}) => {
+    if (popOver) {
+        return (
+            <Popover>
+                <PopoverTrigger p={0}>
+                    <LogoBox>
+                        <Image src={`/logo/${logo}`}
+                               width={"30px"}
+                               height={"30px"}
+                               alt={alt}/>
+                    </LogoBox>
+                </PopoverTrigger>
+                <PopoverContent>
+                    <PopoverArrow/>
+                    <PopoverCloseButton/>
+                    <PopoverHeader>{popOverHead}</PopoverHeader>
+                    <PopoverBody>{popOverText}</PopoverBody>
+                </PopoverContent>
+            </Popover>
+        );
+    }
+
     return (
         <Link href={href}>
             <a style={{display: "inline-block"}} target={"_blank"}>
                 <LogoBox>
                     <Image src={`/logo/${logo}`}
-                           width={30}
-                           height={30}
+                           width={"30px"}
+                           height={"30px"}
                            alt={alt}/>
                 </LogoBox>
             </a>

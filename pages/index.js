@@ -38,9 +38,11 @@ export default function Home() {
                         </Heading>
                         <p>Digital Craftzman - Full stack developer</p>
                         <HStack mt={1} px={0}>
-                            <SocialButton logo={"linkedin.svg"} href={"https://www.linkedin.com/in/korben-gao/"} alt={"LinkedIn"}/>
-                            <SocialButton logo={"gmail.svg"} href={"korben.au@gmail.com"} alt={"Gamil"}/>
+                            <SocialButton logo={"linkedin.svg"} href={"https://www.linkedin.com/in/korben-gao/"}
+                                          alt={"LinkedIn"}/>
                             <SocialButton logo={"git.svg"} href={"https://github.com/KorbenAU/"} alt={"GitHub"}/>
+                            <SocialButton logo={"gmail.svg"} alt={"Gamil"} popOver={true}
+                                          popOverHead={"Email"} popOverText={"korben.au@gmail.com"}/>
                         </HStack>
                     </Box>
                     <Box flexShrink={0} mt={{base: 4, md: 0}} ml={{md: 6}} align={"center"}>

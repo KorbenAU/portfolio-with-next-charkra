@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "./logo";
+import Logo from "./Logo";
 import NextLink from "next/link";
 import {HamburgerIcon} from "@chakra-ui/icons";
 import {

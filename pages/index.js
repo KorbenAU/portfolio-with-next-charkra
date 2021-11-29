@@ -36,7 +36,7 @@ export default function Home() {
                         <Heading as={"h2"} variant={"page-title"}>
                             Korben Gao
                         </Heading>
-                        <p>Digital Craftzman - Full stack developer / Free lancer</p>
+                        <p>Digital Craftzman - Full stack developer / Freelancer</p>
                         <HStack mt={1} px={0}>
                             <SocialButton logo={"linkedin.svg"} href={"https://www.linkedin.com/in/korben-gao/"}
                                           alt={"LinkedIn"}/>

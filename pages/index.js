@@ -1,4 +1,14 @@
-import {Box, Button, Container, Heading, Image, Link, SimpleGrid, useColorModeValue} from "@chakra-ui/react";
+import {
+    Box,
+    Button,
+    Container,
+    Heading,
+    HStack,
+    Image,
+    Link,
+    SimpleGrid,
+    useColorModeValue
+} from "@chakra-ui/react";
 import Section from "../Components/Section";
 import Paragraph from "../Components/Paragraph";
 import {WorkTitle, WorkParagraph, BioTitle, BioParagraph} from "../Constants/TitleAndParagraphs";
@@ -7,6 +17,7 @@ import {ChevronRightIcon} from "@chakra-ui/icons";
 import BioItem from "../Components/Bio";
 import ArticleLayout from "../Components/Layouts/Article";
 import {TechStackItem} from "../Components/GridItem";
+import SocialButton from "../Components/SocialButton";
 
 export default function Home() {
     return (
@@ -26,6 +37,11 @@ export default function Home() {
                             Korben Gao
                         </Heading>
                         <p>Digital Craftzman - Full stack developer</p>
+                        <HStack mt={1} px={0}>
+                            <SocialButton logo={"linkedin.svg"} href={"https://www.linkedin.com/in/korben-gao/"} alt={"LinkedIn"}/>
+                            <SocialButton logo={"gmail.svg"} href={"korben.au@gmail.com"} alt={"Gamil"}/>
+                            <SocialButton logo={"git.svg"} href={"https://github.com/KorbenAU/"} alt={"GitHub"}/>
+                        </HStack>
                     </Box>
                     <Box flexShrink={0} mt={{base: 4, md: 0}} ml={{md: 6}} align={"center"}>
                         <Image borderColor={"whiteAlpha.800"}
@@ -126,6 +142,13 @@ export default function Home() {
                                            techName={"Redux"}
                                            text={"This is sample text for skills"}
                                            logo={"redux.svg"}/>
+                        </Section>
+                        <Section>
+                            <TechStackItem colorSchema={"green"}
+                                           level={"Entry Level"}
+                                           techName={"Zabbix"}
+                                           text={"This is sample text for skills"}
+                                           logo={"zabbix.svg"}/>
                         </Section>
                     </SimpleGrid>
                 </Section>

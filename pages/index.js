@@ -36,7 +36,7 @@ export default function Home() {
                         <Heading as={"h2"} variant={"page-title"}>
                             Korben Gao
                         </Heading>
-                        <p>Digital Craftzman - Full stack developer</p>
+                        <p>Digital Craftzman - Full stack developer / Free lancer</p>
                         <HStack mt={1} px={0}>
                             <SocialButton logo={"linkedin.svg"} href={"https://www.linkedin.com/in/korben-gao/"}
                                           alt={"LinkedIn"}/>
@@ -151,6 +151,20 @@ export default function Home() {
                                            techName={"Zabbix"}
                                            text={"This is sample text for skills"}
                                            logo={"zabbix.svg"}/>
+                        </Section>
+                        <Section>
+                            <TechStackItem colorSchema={"green"}
+                                           level={"Entry Level"}
+                                           techName={"GraphQL"}
+                                           text={"This is sample text for skills"}
+                                           logo={"graphql.svg"}/>
+                        </Section>
+                        <Section>
+                            <TechStackItem colorSchema={"green"}
+                                           level={"Entry Level"}
+                                           techName={"Kafka"}
+                                           text={"This is sample text for skills"}
+                                           logo={"kafka.svg"}/>
                         </Section>
                     </SimpleGrid>
                 </Section>

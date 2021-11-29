@@ -1,7 +1,19 @@
 import React from "react";
 import NextLink from "next/link";
 // import Image from "next/image";
-import {Badge, Box, Divider, Flex, Heading, Image, LinkBox, LinkOverlay, Spacer, Text} from "@chakra-ui/react";
+import {
+    Badge,
+    Box,
+    Divider,
+    Flex,
+    Heading,
+    Image,
+    LinkBox,
+    LinkOverlay,
+    Spacer,
+    Text,
+    useColorModeValue
+} from "@chakra-ui/react";
 import {Global} from "@emotion/react";
 import {WorkImage} from "./Work";
 import Paragraph from "./Paragraph";
@@ -54,7 +66,8 @@ export const TechStackItem = ({techName, level, colorSchema, text, logo}) => {
 
     return (
         <Box w={"100%"}
-             borderColor={"whiteAlpha.800"}
+             borderColor={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
+             bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
              borderWidth={1}
              borderStyle={"solid"}
              borderRadius={"md"}

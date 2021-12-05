@@ -61,7 +61,7 @@ export const TableOfContents = ({contentRef}) => {
                         href={`#${heading.id}`}
                         onClick={(e) => {
                             e.preventDefault();
-                            document.querySelector(`#${heading.id}`).scrollIntoView({
+                            contentRef.current.querySelector(`#${heading.id}`).scrollIntoView({
                                 behavior: "smooth"
                             });
                         }}
@@ -76,7 +76,7 @@ export const TableOfContents = ({contentRef}) => {
                                         href={`#${child.id}`}
                                         onClick={(e) => {
                                             e.preventDefault();
-                                            document.querySelector(`#${child.id}`).scrollIntoView({
+                                            contentRef.current.querySelector(`#${child.id}`).scrollIntoView({
                                                 behavior: "smooth"
                                             });
                                         }}

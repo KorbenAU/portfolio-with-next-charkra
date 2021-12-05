@@ -114,7 +114,7 @@ const SamplePost = () => {
         "\n" +
         "Block code \"fences\"\n" +
         "\n" +
-        "```\n" +
+        "```java\n" +
         "Sample text here...\n" +
         "```\n" +
         "\n" +
@@ -143,6 +143,13 @@ const SamplePost = () => {
         "| data   | path to data files to supply the data that will be passed into templates. |\n" +
         "| engine | engine to be used for processing templates. Handlebars is the default. |\n" +
         "| ext    | extension to be used for dest files. |\n" +
+        "\n" +
+        "Another table:\n" +
+        "\n" +
+        "| Syntax      | Description | Test Text     |\n" +
+        "| :---        |    :----:   |          ---: |\n" +
+        "| Header      | Title       | Here's this   |\n" +
+        "| Paragraph   | Text        | And more      |\n" +
         "\n" +
         "\n" +
         "## Links\n" +
@@ -254,6 +261,8 @@ const SamplePost = () => {
         "::: warning\n" +
         "*here be dragons*\n" +
         ":::\n" +
+        "\n" +
+        "\n" +
         "```java\n" +
         "public class Test{\n" +
         "  public static void main(String args[]){\n" +

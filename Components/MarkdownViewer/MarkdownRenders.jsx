@@ -117,13 +117,13 @@ export const codeRender = ({node, inline, className, children, ...props}) => {
 
     return (
         <Box overflowX="auto">
-            {match && <SyntaxHighlighter language={match}
-                                         style={darcula}
-                                         showLineNumbers={true}
-                                         {...props}
+            <SyntaxHighlighter language={match}
+                               style={darcula}
+                               showLineNumbers={true}
+                               {...props}
             >
                 {String(children).replace(/\n$/, "")}
-            </SyntaxHighlighter>}
+            </SyntaxHighlighter>
         </Box>
     );
 };

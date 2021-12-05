@@ -4,9 +4,7 @@ import Layout from "../../Components/Layouts/Article";
 import {TableOfContents, Title} from "../../Components/Post";
 import PostTag from "../../Components/PostTag";
 import {LOGOS} from "../../Constants";
-import NoSSR from "../../Components/NoSSR";
 import MarkdownViewer from "../../Components/MarkdownViewer/MarkdownViewer";
-import {Head} from "next/document";
 
 
 const SamplePost = () => {

@@ -1,11 +1,12 @@
-import React, {Suspense} from "react";
-import {Badge, Container, Wrap} from "@chakra-ui/react";
+import React, {Suspense, useRef} from "react";
+import {Badge, Box, Container, Heading, Wrap} from "@chakra-ui/react";
 import Layout from "../../Components/Layouts/Article";
-import {Title} from "../../Components/Post";
+import {TableOfContents, Title} from "../../Components/Post";
 import PostTag from "../../Components/PostTag";
 import {LOGOS} from "../../Constants";
 import NoSSR from "../../Components/NoSSR";
 import MarkdownViewer from "../../Components/MarkdownViewer/MarkdownViewer";
+import {Head} from "next/document";
 
 
 const SamplePost = () => {
@@ -21,7 +22,7 @@ const SamplePost = () => {
         "\n" +
         "---\n" +
         "\n" +
-        "# h1 Heading 8-)\n" +
+        "# h1 Heading\n" +
         "## h2 Heading\n" +
         "### h3 Heading\n" +
         "#### h4 Heading\n" +
@@ -99,6 +100,7 @@ const SamplePost = () => {
         "57. foo\n" +
         "1. bar\n" +
         "\n" +
+        "# Add a h1\n" +
         "\n" +
         "## Code\n" +
         "\n" +
@@ -271,6 +273,8 @@ const SamplePost = () => {
         "}\n" +
         "```";
 
+    const contentRef = useRef();
+
     return (
         <Layout title={"That's a sample post"}>
             <Container>
@@ -289,10 +293,16 @@ const SamplePost = () => {
                     <PostTag tagName={"Figma"} icon={LOGOS.figma}/>
                 </Wrap>
 
+                <Box my={"2em"}>
+                    <Heading>Table of content:</Heading>
+                    <TableOfContents contentRef={contentRef}/>
+                </Box>
 
-                <MarkdownViewer>
-                    {markdown}
-                </MarkdownViewer>
+                <Box ref={contentRef}>
+                    <MarkdownViewer>
+                        {markdown}
+                    </MarkdownViewer>
+                </Box>
 
             </Container>
 

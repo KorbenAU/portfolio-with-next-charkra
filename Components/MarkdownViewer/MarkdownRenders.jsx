@@ -23,37 +23,35 @@ export const pRender = props => {
 
 export const h1Render = props => {
     return (
-        <Box overflowX="auto">
-            <Heading as="h1" size="3xl" fontSize={{base: "2.5em", md: "3em", lg: "3.5em"}} isTruncated my={"0.5em"}>
-                {props.children}
-            </Heading>
-        </Box>
+        <Heading as="h1" size="3xl" fontSize={{base: "2.5em", md: "3em", lg: "3.5em"}} isTruncated my={"0.5em"}
+                 id={(props.children + "").toLowerCase().replaceAll(" ", "-")}>
+            {props.children}
+        </Heading>
     );
 };
 
 export const h2Render = props => {
     return (
-        <Box overflowX="auto">
-            <Heading as="h2" size="2xl" fontSize={{base: "2em", md: "2.5em", lg: "3em"}} my={"0.5em"}>
-                {props.children}
-            </Heading>
-        </Box>
+        <Heading as="h2" size="2xl" fontSize={{base: "2em", md: "2.5em", lg: "3em"}} my={"0.5em"}
+                 id={(props.children + "").toLowerCase().replaceAll(" ", "-")}>
+            {props.children}
+        </Heading>
     );
 };
 
 export const h3Render = props => {
     return (
-        <Box overflowX="auto">
-            <Heading as="h3" size="xl" fontSize={{base: "1.5em", md: "2em", lg: "2.5em"}} my={"0.5em"}>
-                {props.children}
-            </Heading>
-        </Box>
+        <Heading as="h3" size="xl" fontSize={{base: "1.5em", md: "2em", lg: "2.5em"}} my={"0.5em"}
+                 id={(props.children + "").toLowerCase().replaceAll(" ", "-")}>
+            {props.children}
+        </Heading>
     );
 };
 
 export const h4Render = props => {
     return (
-        <Heading as="h4" size="md" fontSize={{base: "1em", md: "1.5em", lg: "2em"}} my={"0.5em"}>
+        <Heading as="h4" size="md" fontSize={{base: "1em", md: "1.5em", lg: "2em"}} my={"0.5em"}
+                 id={(props.children + "").toLowerCase().replaceAll(" ", "-")}>
             {props.children}
         </Heading>
     );

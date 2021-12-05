@@ -17,6 +17,34 @@ const Works = () => {
                         This is my sample project based on java javascript react mongodb.
                     </WorkGridItem>
                 </Section>
+                <Section>
+                    <WorkGridItem id={"SampleWorkPage"}
+                                  title={"work1"}
+                                  thumbnail={"/images/test.jpg"}>
+                        This is my sample project based on java javascript react mongodb.
+                    </WorkGridItem>
+                </Section>
+                <Section>
+                    <WorkGridItem id={"SampleWorkPage"}
+                                  title={"work1"}
+                                  thumbnail={"/images/test.jpg"}>
+                        This is my sample project based on java javascript react mongodb.
+                    </WorkGridItem>
+                </Section>
+                <Section>
+                    <WorkGridItem id={"SampleWorkPage"}
+                                  title={"work1"}
+                                  thumbnail={"/images/test.jpg"}>
+                        This is my sample project based on java javascript react mongodb.
+                    </WorkGridItem>
+                </Section>
+                <Section>
+                    <WorkGridItem id={"SampleWorkPage"}
+                                  title={"work1"}
+                                  thumbnail={"/images/test.jpg"}>
+                        This is my sample project based on java javascript react mongodb.
+                    </WorkGridItem>
+                </Section>
             </SimpleGrid>
         </Container>
     );

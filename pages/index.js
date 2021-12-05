@@ -1,23 +1,22 @@
 import {
+    Accordion,
     Box,
     Button,
-    Container,
-    Heading,
+    Container, Heading,
     HStack,
     Image,
     Link,
-    SimpleGrid,
-    useColorModeValue
+    SimpleGrid, useColorModeValue
 } from "@chakra-ui/react";
 import Section from "../Components/Section";
 import Paragraph from "../Components/Paragraph";
-import {WorkTitle, WorkParagraph, BioTitle, BioParagraph} from "../Constants/TitleAndParagraphs";
+import {WorkTitle, WorkParagraph, BioTitle} from "../Constants/TitleAndParagraphs";
 import NextLink from "next/link";
 import {ChevronRightIcon} from "@chakra-ui/icons";
-import BioItem from "../Components/Bio";
 import ArticleLayout from "../Components/Layouts/Article";
 import {TechStackItem} from "../Components/GridItem";
 import SocialButton from "../Components/SocialButton";
+import {BioAccordionItem} from "../Components/AccordionItems";
 
 export default function Home() {
     return (
@@ -139,14 +138,14 @@ export default function Home() {
                                            logo={"python-5.svg"}/>
                         </Section>
                         <Section>
-                            <TechStackItem colorSchema={"green"}
+                            <TechStackItem colorSchema={"yellow"}
                                            level={"Entry Level"}
                                            techName={"Redux"}
                                            text={"This is sample text for skills"}
                                            logo={"redux.svg"}/>
                         </Section>
                         <Section>
-                            <TechStackItem colorSchema={"green"}
+                            <TechStackItem colorSchema={"blue"}
                                            level={"Entry Level"}
                                            techName={"Zabbix"}
                                            text={"This is sample text for skills"}
@@ -172,11 +171,20 @@ export default function Home() {
                     <Heading as={"h3"} variant={"section-title"}>
                         {BioTitle}
                     </Heading>
-                    <BioItem year={"1990 Jun"}
-                             text={"gasdfasdgasdfadsggasdfasdgasdfadsggasdfasdgasdfadsggasdfasdgasdfadsggasdfasdgasdfadsggasdfasdgasdfadsggasdfasdgasdfadsg"}/>
-                    <BioItem year={"1990"} text={"gasdfasdgasdfadsg"}/>
-                    <BioItem year={"1990"} text={"gasdfasdgasdfadsg"}/>
+                    <Accordion>
+                        <BioAccordionItem/>
+                        <BioAccordionItem/>
+                        <BioAccordionItem/>
+                        <BioAccordionItem/>
+                    </Accordion>
+                    {/*<BioItem year={"2020 Psych Press - Full Stack Web Developer"} text={"Psych Press - Full Stack Web Developer"}/>*/}
+                    {/*<BioItem year={"2019"} text={"Ultimate Solar Energy - Full Stack Developer"}/>*/}
+                    {/*<BioItem year={"2016"} text={"University of Melbourne - Master in Software Engineering"}/>*/}
+                    {/*<BioItem year={"2015"} text={"Dareway - Java Developer"}/>*/}
+                    {/*<BioItem year={"2013"} text={"Shandong University - Master in Software Engineering"}/>*/}
                 </Section>
+
+
             </Container>
         </ArticleLayout>
     );

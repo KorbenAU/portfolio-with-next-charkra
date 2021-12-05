@@ -21,10 +21,12 @@ export const pRender = props => {
     );
 };
 
+let index = 0;
+
 export const h1Render = props => {
     return (
         <Heading as="h1" size="3xl" fontSize={{base: "2.5em", md: "3em", lg: "3.5em"}} isTruncated my={"0.5em"}
-                 id={props.children.toString().replaceAll(" ", "-")}>
+                 id={`h1-${index++}`}>
             {props.children}
         </Heading>
     );
@@ -33,7 +35,7 @@ export const h1Render = props => {
 export const h2Render = props => {
     return (
         <Heading as="h2" size="2xl" fontSize={{base: "2em", md: "2.5em", lg: "3em"}} my={"0.5em"}
-                 id={props.children.toString().replaceAll(" ", "-")}>
+                 id={`h2-${index++}`}>
             {props.children}
         </Heading>
     );
@@ -42,7 +44,7 @@ export const h2Render = props => {
 export const h3Render = props => {
     return (
         <Heading as="h3" size="xl" fontSize={{base: "1.5em", md: "2em", lg: "2.5em"}} my={"0.5em"}
-                 id={props.children.toString().replaceAll(" ", "-")}>
+                 id={`h3-${index++}`}>
             {props.children}
         </Heading>
     );
@@ -51,7 +53,7 @@ export const h3Render = props => {
 export const h4Render = props => {
     return (
         <Heading as="h4" size="md" fontSize={{base: "1em", md: "1.5em", lg: "2em"}} my={"0.5em"}
-                 id={props.children.toString().replaceAll(" ", "-")}>
+                 id={`h4-${index++}`}>
             {props.children}
         </Heading>
     );

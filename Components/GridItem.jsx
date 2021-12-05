@@ -1,22 +1,21 @@
 import React from "react";
 import NextLink from "next/link";
-// import Image from "next/image";
 import {
     Badge,
     Box,
     Divider,
     Flex,
-    Heading,
-    Image,
+    Heading, Image,
     LinkBox,
     LinkOverlay,
     Spacer,
     Text,
-    useColorModeValue
+    useColorModeValue, Wrap
 } from "@chakra-ui/react";
 import {Global} from "@emotion/react";
 import {WorkImage} from "./Work";
-import Paragraph from "./Paragraph";
+import PostTag from "./PostTag";
+import {LOGOS} from "../Constants";
 
 const GridItem = ({children, href, title, thumbnail}) => {
     return (
@@ -102,6 +101,44 @@ export const TechStackItem = ({techName, level, colorSchema, text, logo}) => {
                     </Badge>
                 </Box>
             </Flex>
+        </Box>
+    );
+};
+
+export const PostGridItem = ({}) => {
+    return (
+        <Box w={"100%"}>
+            <Flex alignItems={"center"}>
+                <NextLink href={`/posts/sample`}>
+                    <LinkBox cursor={"pointer"}>
+                        <LinkOverlay href={`/posts/sample`}>
+                            <Text mt={2} fontSize={20}>
+                                {"This is a Sample Title This is a Sample Title"}
+                            </Text>
+                        </LinkOverlay>
+                        <Box>
+                            <Text fontSize={14}>
+                                {"This is some text This is some text This is some text This is some text This is some text This is some text This is some text ..."}
+                            </Text>
+                        </Box>
+                    </LinkBox>
+                </NextLink>
+                <Spacer minWidth={"10px"}/>
+                <Text>
+                    {"2021 May"}
+                </Text>
+            </Flex>
+            <Divider my={2}/>
+            <Wrap>
+                <PostTag tagName={"Zabbix"} icon={LOGOS.zabbix}/>
+                <PostTag tagName={"React"} icon={LOGOS.react}/>
+                <PostTag tagName={"JavaScript"} icon={LOGOS.javascript}/>
+                <PostTag tagName={"TypeScript"} icon={LOGOS.typescript}/>
+                <PostTag tagName={"Java"} icon={LOGOS.java}/>
+                <PostTag tagName={"Git"} icon={LOGOS.git}/>
+                <PostTag tagName={"Redux"} icon={LOGOS.redux}/>
+                <PostTag tagName={"Figma"} icon={LOGOS.figma}/>
+            </Wrap>
         </Box>
     );
 };

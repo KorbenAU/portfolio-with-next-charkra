@@ -11,7 +11,7 @@ import {
     useColorModeValue
 } from "@chakra-ui/react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import {darcula} from "react-syntax-highlighter/dist/esm/styles/hljs";
+// import {darcula} from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 export const pRender = props => {
     return (
@@ -116,7 +116,7 @@ export const codeRender = ({node, inline, className, children, ...props}) => {
     return (
         <Box overflowX="auto">
             <SyntaxHighlighter language={match}
-                               style={darcula}
+                               // style={darcula}
                                showLineNumbers={true}
                                {...props}
             >

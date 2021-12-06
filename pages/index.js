@@ -18,7 +18,7 @@ import {TechStackItem} from "../Components/GridItem";
 import SocialButton from "../Components/SocialButton";
 import {BioAccordionItem} from "../Components/AccordionItems";
 
-export default function Home() {
+export default function Home(props) {
     return (
         <ArticleLayout>
             <Container>

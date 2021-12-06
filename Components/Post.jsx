@@ -46,7 +46,7 @@ export const TableOfContents = ({contentRef}) => {
 
     useEffect(() => {
         const headingElements = Array.from(
-            contentRef.current.querySelectorAll("h1,h2,h3,h4")
+            contentRef.current.querySelectorAll("h1,h2,h3")
         );
 
         const newNestedHeadings = getNestedHeadings(headingElements);

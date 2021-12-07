@@ -12,19 +12,6 @@ const Test = () => {
         }
     );
 
-    // async function getCities() {
-    //     const testCollection = collection(db, "test");
-    //     const testSnapshot = await getDocs(testCollection);
-    //     const itemList = testSnapshot.docs.map(doc => doc.data());
-    //     return itemList;
-    // }
-    //
-    // useEffect(() => {
-    //     getCities().then(items => {
-    //         console.log(items);
-    //     });
-    // }, []);
-
     return (
         <div>
             <p>

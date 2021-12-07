@@ -10,15 +10,16 @@ import {
 } from "@chakra-ui/react";
 import Section from "../Components/Section";
 import Paragraph from "../Components/Paragraph";
-import {WorkTitle, WorkParagraph, BioTitle} from "../Constants/TitleAndParagraphs";
 import NextLink from "next/link";
 import {ChevronRightIcon} from "@chakra-ui/icons";
 import ArticleLayout from "../Components/Layouts/Article";
 import {TechStackItem} from "../Components/GridItem";
 import SocialButton from "../Components/SocialButton";
 import {BioAccordionItem} from "../Components/AccordionItems";
+import {getProfileData} from "../API";
 
-export default function Home(props) {
+export default function Home({name, title, introduction}) {
+
     return (
         <ArticleLayout>
             <Container>
@@ -33,9 +34,9 @@ export default function Home(props) {
                 <Box display={{md: "flex"}}>
                     <Box flexGrow={1}>
                         <Heading as={"h2"} variant={"page-title"}>
-                            Korben Gao
+                            {name}
                         </Heading>
-                        <p>Digital Craftzman - Full stack developer / Freelancer</p>
+                        <p>{title}</p>
                         <HStack mt={1} px={0}>
                             <SocialButton logo={"linkedin.svg"} href={"https://www.linkedin.com/in/korben-gao/"}
                                           alt={"LinkedIn"}/>
@@ -58,10 +59,10 @@ export default function Home(props) {
                 </Box>
                 <Section delay={0}>
                     <Heading as={"h3"} variant={"section-title"}>
-                        {WorkTitle}
+                        {"Work"}
                     </Heading>
                     <Paragraph>
-                        {`${WorkParagraph} `}
+                        {introduction + " "}
                         <NextLink href={"/works/inkdrop"}>
                             <Link>gadsfasd</Link>
                         </NextLink>
@@ -169,7 +170,7 @@ export default function Home(props) {
                 </Section>
                 <Section delay={0.4}>
                     <Heading as={"h3"} variant={"section-title"}>
-                        {BioTitle}
+                        {"Bio"}
                     </Heading>
                     <Accordion>
                         <BioAccordionItem/>
@@ -188,4 +189,14 @@ export default function Home(props) {
             </Container>
         </ArticleLayout>
     );
+}
+
+export async function getStaticProps() {
+    const profileData = await getProfileData();
+    return {
+        props: {
+            ...profileData[0],
+            revalidate: 6000,
+        }
+    };
 }

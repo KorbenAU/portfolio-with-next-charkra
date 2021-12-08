@@ -1,4 +1,4 @@
-import React, {Suspense, useRef} from "react";
+import React, {useRef} from "react";
 import {Badge, Box, Container, Heading, Wrap} from "@chakra-ui/react";
 import Layout from "../../Components/Layouts/Article";
 import {TableOfContents, Title} from "../../Components/Post";

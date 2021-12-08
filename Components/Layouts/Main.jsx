@@ -7,6 +7,8 @@ import NoSSR from "../NoSSR";
 import Footer from "../Footer";
 
 const Main = ({children, router}) => {
+    const show3DModel = !router.asPath.startsWith("/admin");
+
     return (
         <Box as={"main"} pb={0}>
             <Head>
@@ -18,9 +20,9 @@ const Main = ({children, router}) => {
             <Navbar path={router.asPath}/>
 
             <Container maxW={"container.md"} pt={14}>
-                <NoSSR>
+                {show3DModel && <NoSSR>
                     <HardWorkModel/>
-                </NoSSR>
+                </NoSSR>}
                 {children}
             </Container>
 

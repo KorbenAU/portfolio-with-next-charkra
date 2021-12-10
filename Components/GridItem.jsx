@@ -5,17 +5,18 @@ import {
     Box,
     Divider,
     Flex,
-    Heading, Image,
+    Heading,
+    Image,
     LinkBox,
     LinkOverlay,
     Spacer,
     Text,
-    useColorModeValue, Wrap
+    useColorModeValue,
+    Wrap
 } from "@chakra-ui/react";
 import {Global} from "@emotion/react";
 import {WorkImage} from "./Work";
 import PostTag from "./PostTag";
-import {LOGOS} from "../Constants";
 
 const GridItem = ({children, href, title, thumbnail}) => {
     return (
@@ -130,14 +131,14 @@ export const PostGridItem = ({}) => {
             </Flex>
             <Divider my={2}/>
             <Wrap>
-                <PostTag tagName={"Zabbix"} icon={LOGOS.zabbix}/>
-                <PostTag tagName={"React"} icon={LOGOS.react}/>
-                <PostTag tagName={"JavaScript"} icon={LOGOS.javascript}/>
-                <PostTag tagName={"TypeScript"} icon={LOGOS.typescript}/>
-                <PostTag tagName={"Java"} icon={LOGOS.java}/>
-                <PostTag tagName={"Git"} icon={LOGOS.git}/>
-                <PostTag tagName={"Redux"} icon={LOGOS.redux}/>
-                <PostTag tagName={"Figma"} icon={LOGOS.figma}/>
+                <PostTag tagName={"Zabbix"}/>
+                <PostTag tagName={"React"}/>
+                <PostTag tagName={"JavaScript"}/>
+                <PostTag tagName={"TypeScript"}/>
+                <PostTag tagName={"Java"}/>
+                <PostTag tagName={"Git"}/>
+                <PostTag tagName={"Redux"}/>
+                <PostTag tagName={"Figma"}/>
             </Wrap>
         </Box>
     );

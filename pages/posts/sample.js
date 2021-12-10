@@ -3,7 +3,6 @@ import {Badge, Box, Container, Heading, Wrap} from "@chakra-ui/react";
 import Layout from "../../Components/Layouts/Article";
 import {TableOfContents, Title} from "../../Components/Post";
 import PostTag from "../../Components/PostTag";
-import {LOGOS} from "../../Constants";
 import MarkdownViewer from "../../Components/MarkdownViewer/MarkdownViewer";
 
 
@@ -425,14 +424,14 @@ const SamplePost = () => {
                 </Title>
 
                 <Wrap>
-                    <PostTag tagName={"Zabbix"} icon={LOGOS.zabbix}/>
-                    <PostTag tagName={"React"} icon={LOGOS.react}/>
-                    <PostTag tagName={"JavaScript"} icon={LOGOS.javascript}/>
-                    <PostTag tagName={"TypeScript"} icon={LOGOS.typescript}/>
-                    <PostTag tagName={"Java"} icon={LOGOS.java}/>
-                    <PostTag tagName={"Git"} icon={LOGOS.git}/>
-                    <PostTag tagName={"Redux"} icon={LOGOS.redux}/>
-                    <PostTag tagName={"Figma"} icon={LOGOS.figma}/>
+                    <PostTag tagName={"Zabbix"}/>
+                    <PostTag tagName={"React"}/>
+                    <PostTag tagName={"JavaScript"}/>
+                    <PostTag tagName={"TypeScript"}/>
+                    <PostTag tagName={"Java"}/>
+                    <PostTag tagName={"Git"}/>
+                    <PostTag tagName={"Redux"}/>
+                    <PostTag tagName={"Figma"}/>
                 </Wrap>
 
                 <Box my={"2em"}>

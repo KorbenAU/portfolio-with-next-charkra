@@ -1,26 +1,25 @@
 import React, {useState} from "react";
-import dynamic from "next/dynamic";
 import "react-markdown-editor-lite/lib/index.css";
-import MarkdownIt from "markdown-it";
 import Head from "next/head";
 import {
-    Box, Button,
-    Container, Divider,
+    Box,
+    Button,
     FormControl,
-    FormHelperText,
-    FormLabel, HStack,
+    FormLabel,
     Input,
-    Select,
-    Switch, Tab, Table, TabList, TabPanel, TabPanels, Tabs, Tag, TagCloseButton, TagLabel, Td, Textarea, Tr,
-    useColorModeValue, Wrap
+    Switch,
+    Tab,
+    TabList,
+    TabPanel,
+    TabPanels,
+    Tabs,
+    Textarea,
+    useColorModeValue,
+    Wrap
 } from "@chakra-ui/react";
 import MarkdownViewer from "../../Components/MarkdownViewer/MarkdownViewer";
-
-const MdEditor = dynamic(() => import("react-markdown-editor-lite"), {
-    ssr: false,
-});
-
-const mdParser = new MarkdownIt(/* Markdown-it options */);
+import {createPost} from "../../API";
+import PostTag from "../../Components/PostTag";
 
 const NewPost = () => {
     const [title, setTitle] = useState("");
@@ -30,12 +29,9 @@ const NewPost = () => {
     const [date, setDate] = useState("");
     const [isPublished, setIsPublished] = useState(true);
     const [mdText, setMdText] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     const color = useColorModeValue("#202023", "#f0e7db");
-
-    const handleMdChange = ({text}) => {
-        setMdText(text);
-    };
 
     const handleTagDelete = (tag) => {
         setTags(tags.filter(t => t !== tag));
@@ -50,9 +46,22 @@ const NewPost = () => {
     };
 
     const tagInputChange = (e) => {
-        if (e.key !== "," && e.key !== "Enter") {
+        if (e.key !== ",") {
             setTagInput(e.target.value);
         }
+    };
+
+    const handleSubmit = async () => {
+        setIsLoading(true);
+        await createPost({
+            title,
+            description,
+            tags,
+            date,
+            isPublished,
+            mdText
+        });
+        setIsLoading(false);
     };
 
     return (
@@ -79,16 +88,13 @@ const NewPost = () => {
 
             <Wrap spacing={1}>
                 {tags.map((tag, index) => (
-                    <Tag size={"sm"} key={index} variant="solid" colorScheme="teal">
-                        <TagLabel>{tag}</TagLabel>
-                        <TagCloseButton onClick={() => handleTagDelete(tag)}/>
-                    </Tag>
+                    <PostTag key={index} tagName={tag} onClick={() => handleTagDelete(tag)}/>
                 ))}
             </Wrap>
 
             <FormControl id="date" my={"1em"}>
                 <FormLabel>Date</FormLabel>
-                <Input variant="filled" type="date"/>
+                <Input variant="filled" type="date" onChange={e => setDate(e.target.value)}/>
             </FormControl>
 
             <FormControl display="flex" my={"2em"} alignItems="center">
@@ -107,10 +113,11 @@ const NewPost = () => {
                 <TabPanels>
                     <TabPanel px={0}>
                         <Textarea h={"600px"} m={0} placeholder="Here is a sample placeholder" value={mdText}
-                                  onChange={e => setMdText(e.target.value)}/>
+                                  onChange={e => setMdText(e.target.value)} borderColor={color} borderWidth={"1px"}/>
                     </TabPanel>
                     <TabPanel px={0}>
-                        <Box h={"500px"}>
+                        <Box h={"600px"} px={"1em"} borderColor={color} borderWidth={"1px"} borderRadius={"md"}
+                             overflow={"scroll"}>
                             <MarkdownViewer>
                                 {mdText}
                             </MarkdownViewer>
@@ -124,13 +131,12 @@ const NewPost = () => {
                     mt={4}
                     colorScheme="teal"
                     type="submit"
+                    isLoading={isLoading}
+                    onClick={handleSubmit}
                 >
                     Submit
                 </Button>
             </Box>
-
-
-            {/*<MdEditor style={{height: "500px"}} renderHTML={text => mdParser.render(text)} onChange={handleMdChange}/>*/}
         </>
 
     );

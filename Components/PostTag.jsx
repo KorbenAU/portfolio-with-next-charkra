@@ -1,10 +1,13 @@
 import React from "react";
-import {Box, Center, Flex, HStack, Image, Tag, TagLabel, TagRightIcon} from "@chakra-ui/react";
+import {Center, HStack, Image, Tag, TagLabel} from "@chakra-ui/react";
+import {LOGOS} from "../Constants";
 
-const PostTag = ({tagName, icon}) => {
+const PostTag = ({tagName, onClick}) => {
+    const icon = LOGOS[tagName.toLowerCase()] || null;
+
     return (
         <HStack spacing={4}>
-            <Tag size={"sm"} variant="outline" colorScheme="blue">
+            <Tag size={"sm"} variant="outline" colorScheme="blue" onClick={onClick}>
                 {tagName && <TagLabel>
                     {tagName}
                 </TagLabel>}

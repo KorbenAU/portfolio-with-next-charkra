@@ -63,8 +63,8 @@ export default function Home({name, title, introduction}) {
                     </Heading>
                     <Paragraph>
                         {introduction + " "}
-                        <NextLink href={"/works/inkdrop"}>
-                            <Link>gadsfasd</Link>
+                        <NextLink href={"/works/test"}>
+                            <Link>Psych Press</Link>
                         </NextLink>
                         .
                     </Paragraph>

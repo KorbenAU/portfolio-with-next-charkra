@@ -106,39 +106,34 @@ export const TechStackItem = ({techName, level, colorSchema, text, logo}) => {
     );
 };
 
-export const PostGridItem = ({}) => {
+export const PostGridItem = ({title, description, tags, date, href}) => {
     return (
         <Box w={"100%"}>
             <Flex alignItems={"center"}>
-                <NextLink href={`/posts/sample`}>
+                <NextLink href={href}>
                     <LinkBox cursor={"pointer"}>
                         <LinkOverlay href={`/posts/sample`}>
                             <Text mt={2} fontSize={20}>
-                                {"This is a Sample Title This is a Sample Title"}
+                                {title}
                             </Text>
                         </LinkOverlay>
                         <Box>
                             <Text fontSize={14}>
-                                {"This is some text This is some text This is some text This is some text This is some text This is some text This is some text ..."}
+                                {description}
                             </Text>
                         </Box>
                     </LinkBox>
                 </NextLink>
                 <Spacer minWidth={"10px"}/>
-                <Text>
-                    {"2021 May"}
+                <Text minWidth={["50px", "80px", "120px"]}>
+                    {date}
                 </Text>
             </Flex>
             <Divider my={2}/>
             <Wrap>
-                <PostTag tagName={"Zabbix"}/>
-                <PostTag tagName={"React"}/>
-                <PostTag tagName={"JavaScript"}/>
-                <PostTag tagName={"TypeScript"}/>
-                <PostTag tagName={"Java"}/>
-                <PostTag tagName={"Git"}/>
-                <PostTag tagName={"Redux"}/>
-                <PostTag tagName={"Figma"}/>
+                {
+                    tags.map((tag, index) => (<PostTag key={index} tagName={tag}/>))
+                }
             </Wrap>
         </Box>
     );

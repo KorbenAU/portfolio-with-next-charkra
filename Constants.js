@@ -22,5 +22,6 @@ export const LOGOS = {
     typescript: "/logo/typescript.svg",
     ts: "/logo/typescript.svg",
     zabbix: "/logo/zabbix.svg",
-    angular: "/logo/angular.svg"
+    angular: "/logo/angular.svg",
+    markdown: "/logo/markdown.svg"
 };
